@@ -1,32 +1,31 @@
-// Busca o botão pelo ID
-const botao = document.getElementById("btn-sobre");
+// Lista de projetos (dados)
+const projects = [
+    {
+        title: "Sistema de Login",
+        description: "Projeto de estudo simulando autenticação de usuários.",
+    },
+    {
+        title: "API de Usuários",
+        description: "API REST simples desenvolvida em C#.",
+    },
+    {
+        title: "Landing Page",
+        description: "Página responsiva criada com HTML e CSS.",
+    },
+];
 
-// Busca o texto pelo ID
-const texto = document.getElementById("sobre-texto");
+// Pega a div onde os projetos vão aparecer
+const projectsContainer = document.getElementById("projects");
 
-// Estado inicial (texto curto)
-let textoCompleto = false;
+// Para cada projeto, cria o HTML automaticamente
+projects.forEach(project => {
+    const projectDiv = document.createElement("div");
+    projectDiv.classList.add("project");
 
-// Escuta o clique do botão
-botao.addEventListener("click", function () {
+    projectDiv.innerHTML = `
+    <h2>${project.title}</h2>
+    <p>${project.description}</p>
+  `;
 
-    if (textoCompleto === false) {
-        texto.innerText =
-            "Sou desenvolvedor trainee com foco em aprender e aplicar boas práticas " +
-            "em desenvolvimento de software. Tenho contato com C#, JavaScript e SQL " +
-            "e busco evoluir através de projetos práticos. Atualmente estudo diariamente " +
-            "para melhorar minha lógica, organização de código e boas práticas.";
-
-        botao.innerText = "Mostrar menos";
-        textoCompleto = true;
-    } else {
-        texto.innerText =
-            "Sou desenvolvedor trainee com foco em aprender e aplicar boas práticas " +
-            "em desenvolvimento de software. Tenho contato com C#, JavaScript e SQL " +
-            "e busco evoluir através de projetos práticos.";
-
-        botao.innerText = "Mostrar mais";
-        textoCompleto = false;
-    }
-
+    projectsContainer.appendChild(projectDiv);
 });
