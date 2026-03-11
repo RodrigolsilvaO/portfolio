@@ -2,19 +2,19 @@
 const projects = [
     {
         title: "Sistema de Login",
-        description: "Projeto de estudo simulando autenticaÁ„o de usu·rios.",
+        description: "Projeto de estudo simulando autentica√ß√£o de usu√°rios.",
     },
     {
-        title: "API de Usu·rios",
+        title: "API de Usu√°rios",
         description: "API REST simples desenvolvida em C#.",
     },
     {
         title: "Landing Page",
-        description: "P·gina responsiva criada com HTML e CSS.",
+        description: "P√°gina responsiva criada com HTML e CSS.",
     },
 ];
 
-// Pega a div onde os projetos v„o aparecer
+// Pega a div onde os projetos v√£o aparecer
 const projectsContainer = document.getElementById("projects");
 
 // Para cada projeto, cria o HTML automaticamente
